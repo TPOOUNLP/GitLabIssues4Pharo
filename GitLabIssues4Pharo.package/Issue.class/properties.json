@@ -5,7 +5,12 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"id",
+		"title",
+		"description",
+		"state"
+	],
 	"name" : "Issue",
 	"type" : "normal"
 }

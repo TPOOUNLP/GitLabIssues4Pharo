@@ -1,14 +1,20 @@
 accessing
 issues
-	"Returns a collection of all the issues in the repo. No project object. No nothing. Just a draft!"
+	"Returns a collection of all the issues in the repo. Just a draft!"
 
-	| projectId aUrl |
+	| aUrl response |
 	
-	projectId := Project new id.
-	aUrl := 'https://gitlab.com/api/v4/projects/{1}/issues' format: { projectId }.
+	aUrl := 'https://gitlab.com/api/v4/projects/{1}/issues' format: { Project new id }.
 	
-	^ZnClient new
-	url: aUrl;
-	setBearerAuthentication: self token;
-	get;
-	response.
+	response := 
+		ZnClient new url: aUrl;
+		setBearerAuthentication: self token;
+		get;
+		response;
+		contents.
+		
+	^(NeoJSONReader on: response readStream)
+	mapAllInstVarsFor: Issue;
+	for: #ArrayOfIssues customDo: [ :mapping | mapping listOfElementSchema: Issue ];
+	nextAs: #ArrayOfIssues
+	
