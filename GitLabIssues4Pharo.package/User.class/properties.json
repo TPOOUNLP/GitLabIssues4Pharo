@@ -7,8 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"id",
-		"name"
+		"username"
 	],
-	"name" : "Project",
+	"name" : "User",
 	"type" : "normal"
 }

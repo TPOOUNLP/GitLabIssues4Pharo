@@ -6,7 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"token"
+		"token",
+		"url",
+		"user",
+		"project"
 	],
 	"name" : "Gitlab",
 	"type" : "normal"

@@ -4,7 +4,7 @@ issues
 
 	| aUrl response |
 	
-	aUrl := 'https://gitlab.com/api/v4/projects/{1}/issues' format: { Project new id }.
+	aUrl := 'https://gitlab.com/api/v4/projects/{1}/issues' format: { self project id }.
 	
 	response := 
 		ZnClient new url: aUrl;
@@ -14,7 +14,7 @@ issues
 		contents.
 		
 	^(NeoJSONReader on: response readStream)
-	mapAllInstVarsFor: Issue;
-	for: #ArrayOfIssues customDo: [ :mapping | mapping listOfElementSchema: Issue ];
-	nextAs: #ArrayOfIssues
+		mapAllInstVarsFor: Issue;
+		for: #ArrayOfIssues customDo: [ :mapping | mapping listOfElementSchema: Issue ];
+		nextAs: #ArrayOfIssues
 	
