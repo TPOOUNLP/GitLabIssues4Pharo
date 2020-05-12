@@ -1,5 +1,5 @@
 instance creation
-new: aGitlab
+get
 	"Should be a singleton?"
 
 	| endpoint response |
@@ -8,12 +8,12 @@ new: aGitlab
 	
 	"Candidate for method extraction"
 	response := 
-		ZnClient new url: (aGitlab url , endpoint);
-		setBearerAuthentication: aGitlab token;
+		ZnClient new url: (App get url , endpoint);
+		setBearerAuthentication: App get token;
 		get;
 		response;
 		contents.
 		
 	^(NeoJSONReader on: response readStream)
-		mapAllInstVarsFor: Project;
+		mapInstVarsFor: Project;
 		nextAs: Project

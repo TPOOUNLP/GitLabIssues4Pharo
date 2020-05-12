@@ -1,7 +1,9 @@
 instance creation
 withToken: aToken
 	"New Gitlab object with token"
-	
-	^self basicNew
+
+	instance := self basicNew
 		token: aToken;
-		initialize
+		initialize.
+		
+	^self get
