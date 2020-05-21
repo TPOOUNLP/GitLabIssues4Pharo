@@ -1,18 +1,12 @@
 instance creation
 byId: anId
-	"Returns a new Issue that corresponds with the given id"
+	"Candidate for deprecation. Implemented at Project>>#IssueById:"
 
-	| aUrl response |
+	| endpoint |
 	
-	aUrl := 'https://gitlab.com/api/v4/projects/{1}/issues/{2}' format: { App get project id . anId }.
+	endpoint := 'https://gitlab.com/api/v4/projects/{1}/issues/{2}' format: { App get project id . anId }.
 	
-	response := 
-		ZnClient new url: aUrl;
-		setBearerAuthentication: App get token;
-		get;
-		response;
-		contents.
-		
-	^(NeoJSONReader on: response readStream)
+	"Should we extract custom mappings (or any mapping)?"	
+	^(NeoJSONReader on: (ZincRequest httpGet: endpoint) readStream)
 		mapInstVarsFor: Issue;
 		nextAs: Issue

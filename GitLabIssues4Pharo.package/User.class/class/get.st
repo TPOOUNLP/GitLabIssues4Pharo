@@ -1,20 +1,11 @@
 instance creation
 get
-	"Should be a singleton?"
-
-	| endpoint response |
+	| endpoint |
 	
-	endpoint := '/user'.
+	endpoint := App get url , '/user'.
 	
-	"Candidate for method extraction"
-	response := 
-		ZnClient new url: (App get url , endpoint);
-		setBearerAuthentication: App get token;
-		get;
-		response;
-		contents.
-		
-	^(NeoJSONReader on: response readStream)
+	"Should we extract custom mappings (or any mapping)?"
+	^(NeoJSONReader on: (ZincRequest httpGet: endpoint) readStream)
 		mapInstVarsFor: User;
 		nextAs: User
 	
