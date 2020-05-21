@@ -1,19 +1,12 @@
 accessing
 issueById: anId
-	"Returns the Issue that corresponds with the given id"
+	"Returns a new Issue that corresponds with the given id"
 
-	| aUrl response |
+	| endpoint |
 	
-	aUrl := 'https://gitlab.com/api/v4/projects/{1}/issues/{2}' format: { self id . anId }.
+	endpoint := 'https://gitlab.com/api/v4/projects/{1}/issues/{2}' format: { self id . anId }.
 	
-	response := 
-		ZnClient new url: aUrl;
-		setBearerAuthentication: App get token;
-		get;
-		response;
-		contents.
-		
-	^(NeoJSONReader on: response readStream)
+	"Should we extract custom mappings (or any mapping)?"	
+	^(NeoJSONReader on: (ZincRequest httpGet: endpoint) readStream)
 		mapInstVarsFor: Issue;
 		nextAs: Issue
-	
