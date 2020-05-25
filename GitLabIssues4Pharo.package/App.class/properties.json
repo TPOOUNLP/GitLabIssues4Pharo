@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "GitLabIssues4Pharo",
+	"classinstvars" : [
+		"instance"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"token",
+		"url",
+		"user",
+		"project"
+	],
+	"name" : "App",
+	"type" : "normal"
+}
