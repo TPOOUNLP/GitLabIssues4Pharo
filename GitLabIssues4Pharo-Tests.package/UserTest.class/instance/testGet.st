@@ -1,6 +1,7 @@
 tests
 testGet
-	| user |	
+	| user |
+	
 	(ZincRequest stub httpGet: (Kind of: String)) willReturn: '{"id":1,"username":"aName"}'.
 	
 	user := User get.

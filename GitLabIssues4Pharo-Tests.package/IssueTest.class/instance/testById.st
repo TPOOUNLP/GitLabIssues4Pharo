@@ -1,5 +1,5 @@
 tests
-testIssueById
+testById
 	| project issue |
 	
 	(ZincRequest stub httpGet: (Kind of: String)) willReturn: '{"id":2,"title":"Two"}'.

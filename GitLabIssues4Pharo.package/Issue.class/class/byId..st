@@ -4,7 +4,7 @@ byId: anId
 
 	| endpoint |
 	
-	endpoint := 'https://gitlab.com/api/v4/projects/{1}/issues/{2}' format: { App get project id . anId }.
+	endpoint := 'https://gitlab.com/api/v4/projects/{1}/issues/{2}' format: { App get selectedProject id . anId }.
 	
 	"Should we extract custom mappings (or any mapping)?"	
 	^(NeoJSONReader on: (ZincRequest httpGet: endpoint) readStream)

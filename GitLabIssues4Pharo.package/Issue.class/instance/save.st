@@ -1,10 +1,10 @@
 updating
-update
+save
 	"Could have a ref to 'last saved' and compare it to 'self', thus checking for dirtiness before updating (?)"
 
 	| endpoint json |
 	
-	endpoint := App get url , '/projects/{1}/issues/{2}' format: {App get project id . self iid}.
+	endpoint := App get url , '/projects/{1}/issues/{2}' format: {App get selectedProject id . self iid}.
 	
 	"Should we extract custom mappings (or any mapping)?"
 	json := String streamContents: [ :stream |

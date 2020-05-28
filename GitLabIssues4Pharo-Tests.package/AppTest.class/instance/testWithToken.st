@@ -10,4 +10,4 @@ testWithToken
 	self assert: app token equals: 'privateAccessToken'.
 	self assert: app url equals: 'https://gitlab.com/api/v4'.
 	self assert: app user id equals: 'userID'.
-	self assert: app project id equals: 'projectID'
+	self assert: app selectedProject id equals: 'projectID'

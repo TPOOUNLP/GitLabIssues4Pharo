@@ -1,6 +1,7 @@
 tests
 testGet
-	| project |	
+	| project |
+	
 	(ZincRequest stub httpGet: (Kind of: String)) willReturn: '{"id":1,"name":"aName"}'.
 	
 	project := Project get.
