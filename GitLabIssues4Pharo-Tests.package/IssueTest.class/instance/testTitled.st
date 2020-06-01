@@ -2,7 +2,7 @@ tests
 testTitled
 	| issue |
 	
-	(ZincRequest stub httpPost: 'https://gitlab.com/api/v4/projects/3/issues' content: (Kind of: String))
+	(ZincRequest stub httpPost: (Kind of: String) content: (Kind of: String))
 		willReturn: '{"id":1,"title":"aTitle"}'.
 	
 	App get selectedProject id: 3.

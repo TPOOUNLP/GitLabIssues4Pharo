@@ -4,9 +4,10 @@ testSave
 	
 	(ZincRequest stub httpPut: (Kind of: String) content: (Kind of: String)) willReturn: '{"id":1,"iid":2,"title":"aTitle","description":"New"}'.
 	
-	issue := Issue new id: 1; iid: 2; title: 'Title'; description: 'Old'.
+	issue := Issue new id: 1; iid: 2; title: 'Title'; description: IssueDescription new.
+	issue description head: 'Old'.
 	
-	"At some point >> issue description: 'New'."
+	"At some point >> issue description head: 'New'."
 	issue save.
 	
-	self assert: issue description equals: 'New'.
+	self assert: issue description head equals: 'New' , Character cr asString.
