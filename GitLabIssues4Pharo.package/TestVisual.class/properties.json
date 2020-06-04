@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "LucasJarpa 6/4/2020 19:12",
+	"super" : "ComposableModel",
+	"category" : "GitLabIssues4Pharo",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"buttonHappy",
+		"buttonNeutral",
+		"buttonBad",
+		"screen"
+	],
+	"name" : "TestVisual",
+	"type" : "normal"
+}

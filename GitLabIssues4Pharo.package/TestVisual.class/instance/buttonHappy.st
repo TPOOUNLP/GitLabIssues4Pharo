@@ -1,0 +1,3 @@
+add class
+buttonHappy
+	^ buttonHappy
