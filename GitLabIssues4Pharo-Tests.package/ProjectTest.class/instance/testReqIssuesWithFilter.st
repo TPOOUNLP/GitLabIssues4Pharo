@@ -2,7 +2,7 @@ tests
 testReqIssuesWithFilter
 	| project |
 	
-	(ZincRequest stub httpGet: (Kind of: String)) willReturn: '[{"id":6,"title":"Six"}]'.
+	(ZincRequest stub httpGet: 'https://gitlab.com/api/v4/projects/5/issues?state=closed') willReturn: '[{"id":6,"title":"Six"}]'.
 	
 	project := Project new id: 5.
 	App get issueFilters byState: 'closed'.

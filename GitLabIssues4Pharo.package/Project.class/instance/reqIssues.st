@@ -8,8 +8,9 @@ reqIssues
 	
 	"Should we extract custom mappings (or any mapping)?"
 	^self issues: ((NeoJSONReader on: (ZincRequest httpGet: endpoint) readStream)
-		mapInstVarsFor: Issue;
+		for: Issue do: [ :mapping | mapping mapInstVars: #(id iid title state).
+											(mapping mapInstVar: #description) valueSchema: IssueDescription ];
+		for: IssueDescription customDo: [ :mapping | mapping decoder: [ :string | IssueDescription fromRaw: string ] ];
 		for: #ArrayOfIssues customDo: [ :mapping | mapping listOfElementSchema: Issue ];
 		nextAs: #ArrayOfIssues) asOrderedCollection;
 		issues
-	
