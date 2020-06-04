@@ -6,6 +6,4 @@ baseline: spec
 	
 	spec baseline: 'NeoJSON' with: [ spec repository: 'github://svenvc/NeoJSON/repository' ].
 	
-	spec baseline: 'Mocketry' with: [ spec repository: 'github://dionisiydk/Mocketry' ].
-	
-	spec baseline: 'PetitParser2Core' with: [ spec repository: 'github://kursjan/petitparser2' ]
+	spec baseline: 'Mocketry' with: [ spec repository: 'github://dionisiydk/Mocketry' ]

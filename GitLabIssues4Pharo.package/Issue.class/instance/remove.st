@@ -8,5 +8,6 @@ remove
 	
 	"PLEASE refactor this!"
 	^(ZincRequest httpDelete: endpoint)
-		ifTrue: [ App get selectedProject issues detect: [:issue | issue iid = self iid ] ifFound: [ App get selectedProject issues remove: self ]. true ]
+		ifTrue: [ App get selectedProject issues remove: self.
+					 true ]
 		ifFalse: [ false ]

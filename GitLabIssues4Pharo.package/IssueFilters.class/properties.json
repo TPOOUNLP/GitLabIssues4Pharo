@@ -2,19 +2,12 @@
 	"commentStamp" : "",
 	"super" : "Object",
 	"category" : "GitLabIssues4Pharo",
-	"classinstvars" : [
-		"instance"
-	],
+	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"token",
-		"url",
-		"user",
-		"projects",
-		"selectedProject",
-		"issueFilters"
+		"filters"
 	],
-	"name" : "App",
+	"name" : "IssueFilters",
 	"type" : "normal"
 }

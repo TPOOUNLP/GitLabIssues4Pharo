@@ -4,7 +4,7 @@ reqIssues
 
 	| endpoint |
 	
-	endpoint := 'https://gitlab.com/api/v4/projects/{1}/issues' format: { self id }.
+	endpoint := 'https://gitlab.com/api/v4/projects/{1}/issues' , App get issueFilters get format: { self id }.
 	
 	"Should we extract custom mappings (or any mapping)?"
 	^self issues: ((NeoJSONReader on: (ZincRequest httpGet: endpoint) readStream)
