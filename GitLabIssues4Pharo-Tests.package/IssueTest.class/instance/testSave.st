@@ -10,4 +10,4 @@ testSave
 	"At some point >> issue description head: 'New'."
 	issue save.
 	
-	self assert: issue description head equals: 'New' , Character cr asString.
+	self assert: issue description head equals: 'New' , String lf.

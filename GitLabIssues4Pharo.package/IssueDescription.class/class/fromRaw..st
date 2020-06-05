@@ -9,7 +9,7 @@ fromRaw: aString
 		ifFalse: [
 			"Every line after the first TodoListItem has been found will not be considered." 
 			description todo isEmpty
-			ifTrue: [ description head: description head , line , Character cr asString ]
+			ifTrue: [ description head: description head , line , String lf ]
 		] ].
 
 	^description

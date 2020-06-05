@@ -3,11 +3,11 @@ testAsString
 	| raw description |
 	
 	raw := 'Keep this line',
-		Character cr asString , 
+		String lf , 
 		'and also this one' ,
-		Character cr asString ,
+		String lf ,
 		'* [x] Finished task' ,
-		Character cr asString ,
+		String lf ,
 		'* [ ] Unfinished task'.	
 	
 	description := IssueDescription fromRaw: raw.
