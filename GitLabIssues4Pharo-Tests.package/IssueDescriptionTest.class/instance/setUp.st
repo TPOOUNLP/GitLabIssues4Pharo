@@ -1,8 +1,8 @@
 running
 setUp
 
-	App instance: App basicNew.
-	App get user: User basicNew.
-	App get projects: OrderedCollection new.
-	App get selectedProject: Project basicNew.
-	App get issueFilters: IssueFilters new.
+	GitlabConnector instance: GitlabConnector basicNew.
+	GitlabConnector get user: User basicNew.
+	GitlabConnector get projects: OrderedCollection new.
+	GitlabConnector get selectedProject: Project basicNew.
+	GitlabConnector get issueFilters: IssueFilters new.

@@ -1,4 +1,4 @@
 accessing
 issuesByProjectId: anId
 
-	^self url , '/projects/{1}/issues' , App get issueFilters get format: { anId }
+	^self url , '/projects/{1}/issues' , GitlabConnector get issueFilters get format: { anId }

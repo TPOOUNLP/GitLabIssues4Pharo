@@ -1,7 +1,7 @@
 requesting
 httpDelete: url
 	^ZnClient new url: url;
-		setBearerAuthentication: App get token;
+		setBearerAuthentication: GitlabConnector get token;
 		delete;
 		response;
 		isSuccess

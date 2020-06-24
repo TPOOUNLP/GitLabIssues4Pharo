@@ -5,7 +5,7 @@ testTitled
 	(ZincRequest stub httpPost: (Kind of: String) content: (Kind of: String))
 		willReturn: '{"id":1,"title":"aTitle"}'.
 	
-	App get selectedProject id: 3.
+	GitlabConnector get selectedProject id: 3.
 	
 	issue := Issue titled: 'aTitle'.
 	
