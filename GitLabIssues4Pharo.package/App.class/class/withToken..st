@@ -1,6 +1,6 @@
 instance creation
 withToken: aToken
-	"New Gitlab object with token"
+	"New GitlabConnector object with token"
 
 	instance := self basicNew
 		token: aToken;

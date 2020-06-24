@@ -8,6 +8,5 @@ testWithToken
 	app := App withToken: 'privateAccessToken'.
 	
 	self assert: app token equals: 'privateAccessToken'.
-	self assert: app url equals: 'https://gitlab.com/api/v4'.
 	self assert: app user id equals: 'userID'.
 	self assert: app selectedProject id equals: 'projectID'
