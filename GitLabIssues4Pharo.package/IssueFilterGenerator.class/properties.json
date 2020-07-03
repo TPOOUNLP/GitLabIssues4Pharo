@@ -8,6 +8,6 @@
 	"instvars" : [
 		"filters"
 	],
-	"name" : "IssueFilters",
+	"name" : "IssueFilterGenerator",
 	"type" : "normal"
 }

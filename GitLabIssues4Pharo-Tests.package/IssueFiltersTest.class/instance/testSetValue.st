@@ -2,7 +2,7 @@ tests
 testSetValue
 	| issueFilters |
 	
-	issueFilters := IssueFilters new.
+	issueFilters := IssueFilterGenerator new.
 	issueFilters set: 'a' value: 'aaa'.
 	issueFilters set: 'b' value: 'bbb'.
 	issueFilters set: 'a' value: 'ccc'.
