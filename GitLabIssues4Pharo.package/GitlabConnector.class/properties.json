@@ -12,7 +12,8 @@
 		"user",
 		"projects",
 		"selectedProject",
-		"issueFilters"
+		"issueFilters",
+		"config"
 	],
 	"name" : "GitlabConnector",
 	"type" : "normal"
