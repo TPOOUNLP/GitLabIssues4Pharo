@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "AppTest",
+	"name" : "IssueNoteTest",
 	"type" : "normal"
 }
