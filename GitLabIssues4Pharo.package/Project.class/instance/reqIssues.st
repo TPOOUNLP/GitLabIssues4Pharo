@@ -1,6 +1,6 @@
 accessing
 reqIssues
-	"Returns a collection of all the issues for this project. Just a draft!"
+	"Returns a collection of all issues for this project"
 
 	^self issues: ((NeoJSONReader on: (ZincRequest httpGet: (Endpoint issuesByProjectId: self id)) readStream)
 		for: Issue do: [ :mapping | mapping mapInstVars: #(id iid title state).
