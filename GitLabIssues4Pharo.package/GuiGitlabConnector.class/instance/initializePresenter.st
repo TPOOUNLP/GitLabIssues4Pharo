@@ -1,7 +1,7 @@
 initialization
 initializePresenter
 	"get dato from API"
-	buttonBad action: [ screen label: self inputTokenGitLab  ].
+	buttonBad action: [ screen label: 'Genial'  ].
 	
 	
 	
