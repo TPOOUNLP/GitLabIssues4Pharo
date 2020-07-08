@@ -2,11 +2,14 @@
 	"commentStamp" : "",
 	"super" : "Object",
 	"category" : "GitLabIssues4Pharo",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"instance"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"subscription"
+		"publicAccessToken",
+		"isListeningForCommitEvent"
 	],
 	"name" : "GCConfiguration",
 	"type" : "normal"

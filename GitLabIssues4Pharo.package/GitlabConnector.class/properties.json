@@ -12,6 +12,7 @@
 		"user",
 		"projects",
 		"selectedProject",
+		"selectedIssue",
 		"issueFilters",
 		"config"
 	],
