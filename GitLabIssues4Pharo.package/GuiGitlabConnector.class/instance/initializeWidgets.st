@@ -10,7 +10,7 @@ buttonBad := self newButton.
 "configuration button"
 
 screen label: 'Bienvenido'.
-inputTokenGitLab content: 'Ingrese aqui su token'.
+
 
 buttonBad 
 label: 'Actualizar';
