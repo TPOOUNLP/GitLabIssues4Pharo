@@ -11,14 +11,10 @@ listprojects  displayBlock: [ :m | m selector ].
 listissues := self newList. 
 listissues displayBlock: [ :m | m selector ].
 
-
-
-
 "initial configuration button"
-
 screen label: 'Bienvenido'.
 
-
+" initialization button bad "
 buttonBad 
 label: 'Actualizar';
 icon: (self iconNamed: #thumbsUp).
