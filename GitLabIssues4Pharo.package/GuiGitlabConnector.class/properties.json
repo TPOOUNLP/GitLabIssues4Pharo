@@ -9,7 +9,8 @@
 		"inputTokenGitLab",
 		"screen",
 		"switchBoolean",
-		"buttonBad"
+		"buttonBad",
+		"connector"
 	],
 	"name" : "GuiGitlabConnector",
 	"type" : "normal"

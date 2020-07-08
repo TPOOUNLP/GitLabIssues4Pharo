@@ -2,6 +2,7 @@ initialization
 initializeWidgets
 	
 	"widget instantiation"
+connector:= GitlabConnector withToken: 'h1XrDzHaxbyYxuAv9Rsy'.	
 screen := self newLabel.
 inputTokenGitLab := self newTextInput. 
 buttonBad := self newButton.
