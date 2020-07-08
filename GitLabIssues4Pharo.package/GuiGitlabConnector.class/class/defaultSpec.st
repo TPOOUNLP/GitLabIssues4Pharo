@@ -6,7 +6,7 @@ defaultSpec
 	
 	
 	newRow: [ :row |
-				row add: #listprojects;add: #listissues]
+				row add: #listprojects;add:#listissues ]
 				origin: 0 @ 0 corner: 1 @ 0.7;
 
 	newRow: [ :row |

@@ -7,9 +7,9 @@ screen := self newLabel.
 inputTokenGitLab := self newTextInput. 
 buttonBad := self newButton.
 listprojects := self newList.
-listprojects  displayBlock: [ :m | m selector ].
+"listprojects  displayBlock: [ :m | m selector ]."
 listissues := self newList. 
-listissues displayBlock: [ :m | m selector ].
+"listissues displayBlock: [ :m | m selector ]."
 
 "initial configuration button"
 screen label: 'Bienvenido'.

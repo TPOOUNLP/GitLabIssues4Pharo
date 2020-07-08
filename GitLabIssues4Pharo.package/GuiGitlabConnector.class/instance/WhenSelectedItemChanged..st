@@ -1,3 +1,3 @@
 as yet unclassified
-projectWhenSelectedItemChanged: aBlock
+WhenSelectedItemChanged: aBlock
 	listissues  whenSelectedChanged: aBlock
