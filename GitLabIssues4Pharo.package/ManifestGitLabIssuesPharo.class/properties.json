@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "LucasJarpa 7/7/2020 22:46",
+	"super" : "PackageManifest",
+	"category" : "GitLabIssues4Pharo-Manifest",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ManifestGitLabIssuesPharo",
+	"type" : "normal"
+}
