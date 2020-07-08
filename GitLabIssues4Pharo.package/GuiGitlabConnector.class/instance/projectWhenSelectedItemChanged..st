@@ -1,0 +1,3 @@
+as yet unclassified
+projectWhenSelectedItemChanged: aBlock
+	listprojects whenSelectedChanged: aBlock

@@ -10,7 +10,9 @@
 		"screen",
 		"switchBoolean",
 		"buttonBad",
-		"connector"
+		"connector",
+		"listprojects",
+		"listissues"
 	],
 	"name" : "GuiGitlabConnector",
 	"type" : "normal"
