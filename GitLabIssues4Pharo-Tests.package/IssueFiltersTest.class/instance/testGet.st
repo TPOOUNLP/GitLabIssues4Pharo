@@ -2,8 +2,8 @@ tests
 testGet
 	| issueFilters emptyIssueFilters |
 	
-	issueFilters := IssueFilters new.
-	emptyIssueFilters := IssueFilters new.
+	issueFilters := IssueFilterGenerator new.
+	emptyIssueFilters := IssueFilterGenerator new.
 	
 	issueFilters set: 'a' value: 'aaa'.
 	issueFilters set: 'b' value: 'bbb'.

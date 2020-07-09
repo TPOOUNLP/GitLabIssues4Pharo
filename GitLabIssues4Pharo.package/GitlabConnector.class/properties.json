@@ -8,11 +8,12 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"token",
 		"user",
 		"projects",
 		"selectedProject",
-		"issueFilters"
+		"selectedIssue",
+		"issueFilters",
+		"config"
 	],
 	"name" : "GitlabConnector",
 	"type" : "normal"
