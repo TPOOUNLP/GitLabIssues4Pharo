@@ -1,5 +1,12 @@
 as yet unclassified
 insertCommitIdIntoIssue: anAnnouncement
-	Transcript show: anAnnouncement repository headCommit id
-	"Should show the Issue-Dashboard for issue selection"
-	"selectedIssue comment: commit_url/commit_id"
+	| wclis |
+	Transcript show: 'lalla'.
+	wclis := WidgetCommitLoggerIssueSelector new.
+	wclis openWithSpec.
+	wclis window whenClosedDo: [ 
+		GitlabConnector get selectedIssue isNotNil ifTrue: [ 
+			GitlabConnector get selectedIssue comment: 
+				('Committed: ' , anAnnouncement repository headCommit id asString) 
+			] 
+	]

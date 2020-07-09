@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Set",
+	"category" : "Announcements-Core-Collections",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "AnnouncementSet",
+	"type" : "normal"
+}
