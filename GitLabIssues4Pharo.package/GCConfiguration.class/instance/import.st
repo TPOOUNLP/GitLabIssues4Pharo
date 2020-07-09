@@ -1,4 +1,4 @@
-as yet unclassified
+write and read
 import
 	| stream line |
 	

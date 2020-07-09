@@ -2,9 +2,7 @@
 	"commentStamp" : "",
 	"super" : "Object",
 	"category" : "GitLabIssues4Pharo",
-	"classinstvars" : [
-		"instance"
-	],
+	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [

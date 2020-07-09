@@ -1,4 +1,4 @@
-as yet unclassified
+write and read
 export
 	| stream |
 	
@@ -7,7 +7,7 @@ export
 	GCConfiguration instanceVariableNamesDo: [ :var |
 		stream nextPutAll: var.
 		stream nextPutAll: ' '.
-		stream nextPutAll: (GCConfiguration get perform: var) asString.
+		stream nextPutAll: (self perform: var) asString.
 		stream nextPutAll: String crlf ].
 	
 	stream close
