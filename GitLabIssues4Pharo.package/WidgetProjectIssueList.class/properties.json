@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "GitLabIssues4Pharo",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"projectList",
+		"issueList"
+	],
+	"name" : "WidgetProjectIssueList",
+	"type" : "normal"
+}

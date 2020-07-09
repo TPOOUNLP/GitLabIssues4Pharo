@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "GitLabIssues4Pharo",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"issueSelector",
+		"buttonAccept",
+		"buttonCancel"
+	],
+	"name" : "WidgetCommitLoggerIssueSelector",
+	"type" : "normal"
+}
