@@ -12,7 +12,8 @@
 		"buttonBad",
 		"connector",
 		"listprojects",
-		"listissues"
+		"listissues",
+		"widgetcombine"
 	],
 	"name" : "GuiGitlabConnector",
 	"type" : "normal"

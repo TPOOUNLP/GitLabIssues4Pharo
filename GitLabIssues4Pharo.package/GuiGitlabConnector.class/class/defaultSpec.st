@@ -2,11 +2,18 @@ specs
 defaultSpec
 	" here we define value about windows, widget e.g "
 	
-	^ SpecLayout composed
+	^ SpecColumnLayout composed
 	
+	add: #WidgetProjectIssueList;
 	
+	"	
 	newRow: [ :row |
 				row add: #listprojects;add:#listissues ]
+				origin: 0 @ 0 corner: 1 @ 0.7;
+	"
+	"
+	newRow: [ :row |
+				row add: #WidgetProjectIssueList ]
 				origin: 0 @ 0 corner: 1 @ 0.7;
 
 	newRow: [ :row |
@@ -17,5 +24,9 @@ defaultSpec
 	newRow: [ :row |
 				 row add: #screen ]
 				origin: 0 @ 0.7 corner: 1 @ 0.22;			
+
+	"
+	
+	
 
 	yourself
