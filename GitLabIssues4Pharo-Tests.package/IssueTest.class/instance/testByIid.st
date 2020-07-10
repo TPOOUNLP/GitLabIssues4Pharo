@@ -2,7 +2,8 @@ tests
 testByIid
 	| project issue |
 	
-	(ZincRequest stub httpGet: (Kind of: String)) willReturn: '{"id":2,"title":"Two"}'.
+	(ZincRequest stub httpGet: (Kind of: String)) willReturn: 
+		((ZnResponse statusCode: 200) entity: (ZnEntity json: '{"id":2,"title":"Two"}')).
 	
 	project := Project new id: 1.
 	issue := Issue byIid: 2.
