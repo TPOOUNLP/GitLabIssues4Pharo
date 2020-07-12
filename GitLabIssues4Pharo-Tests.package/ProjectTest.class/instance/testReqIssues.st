@@ -2,7 +2,8 @@ tests
 testReqIssues
 	| project |
 	
-	(ZincRequest stub httpGet: 'https://gitlab.com/api/v4/projects/5/issues') willReturn: '[{"id":1,"title":"One"},{"id":2,"title":"Two"}]'.
+	(ZincRequest stub httpGet: 'https://gitlab.com/api/v4/projects/5/issues') willReturn: 
+		((ZnResponse statusCode: 200) entity: (ZnEntity json: '[{"id":1,"title":"One"},{"id":2,"title":"Two"}]')).
 	
 	project := Project new id: 5.
 	

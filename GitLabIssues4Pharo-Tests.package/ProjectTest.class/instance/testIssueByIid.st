@@ -2,7 +2,8 @@ tests
 testIssueByIid
 	| project found notFound |
 	
-	(ZincRequest stub httpGet: (Kind of: String)) willReturn: '{"id":2,"title":"Two"}'.
+	(ZincRequest stub httpGet: (Kind of: String)) willReturn: 
+		((ZnResponse statusCode: 200) entity: (ZnEntity json: '{"id":2,"title":"Two"}')).
 	
 	project := Project new.
 	project issues add: (Issue new id: 1; iid: 2; title: 'First').

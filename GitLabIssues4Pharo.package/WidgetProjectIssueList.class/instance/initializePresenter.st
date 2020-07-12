@@ -1,7 +1,7 @@
 initialization
 initializePresenter
 
-	GitlabConnector new.
+	[ GitlabConnector new.
 
 	projectList
 		items: GitlabConnector get reqProjects;
@@ -14,3 +14,4 @@ initializePresenter
 		whenListChanged: [ issueList resetSelection.
 								 GitlabConnector get selectedIssue: nil ];
 		whenSelectedItemChanged: [ :issue | GitlabConnector get selectedIssue: issue ].
+	] on: Error do: [  ] 

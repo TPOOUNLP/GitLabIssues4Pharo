@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "GitLabIssues4Pharo",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"labelInputToken",
+		"inputToken",
+		"checkboxListenCommitEvent",
+		"buttonImport",
+		"buttonExport"
+	],
+	"name" : "WidgetConfiguration",
+	"type" : "normal"
+}

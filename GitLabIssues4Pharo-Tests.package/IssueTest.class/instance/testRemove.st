@@ -2,7 +2,7 @@ tests
 testRemove
 	| issue |
 	
-	(ZincRequest stub httpDelete: 'https://gitlab.com/api/v4/projects/3/issues/2') willReturn: true.
+	(ZincRequest stub httpDelete: 'https://gitlab.com/api/v4/projects/3/issues/2') willReturn: (ZnResponse statusCode: 200).
 	
 	GitlabConnector get selectedProject: (Project basicNew id: 3; issues: OrderedCollection new).
 	

@@ -1,8 +1,11 @@
 accessing
 reqProjects
-	"Returns a collection of all projects for the current user."
+	| result |
 	
-	^self projects: ((NeoJSONReader on: (ZincRequest httpGet: (Endpoint simpleProjects)) readStream)
+	result := ZincRequest httpGet: (Endpoint simpleProjects).
+	result isSuccess ifFalse: [ GitlabApiUnreachable signal ].
+	
+	^self projects: ((NeoJSONReader on: result contents readStream)
 		mapInstVarsFor: Project;
 		for: #ArrayOfProjects customDo: [ :mapping | mapping listOfElementSchema: Project ];
 		nextAs: #ArrayOfProjects) asOrderedCollection;
