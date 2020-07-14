@@ -7,7 +7,16 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"projectList",
-		"issueList"
+		"issueList",
+		"labelUserName",
+		"labelProjectTitle",
+		"labelIssueName",
+		"labelIssueState",
+		"labelIssueDescription",
+		"buttonNew",
+		"buttonDelete",
+		"buttonEdit",
+		"buttonTodo"
 	],
 	"name" : "WidgetProjectIssueList",
 	"type" : "normal"

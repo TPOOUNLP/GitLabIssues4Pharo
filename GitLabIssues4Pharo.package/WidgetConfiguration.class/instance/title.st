@@ -1,4 +1,4 @@
 api
 title
 
-	^'Configuracion'
+	^'Configuration'
