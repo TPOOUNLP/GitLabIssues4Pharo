@@ -28,6 +28,8 @@ initializePresenter
 										].
 									
 		buttonDelete action: [ GitlabConnector get selectedIssue remove ].
-		" agrego otros actions de mis botones ? "
+		buttonTodo  action:[ WidgetConfiguration new openWithSpec ].
+		buttonNew  	action:[ WidgetConfiguration new openWithSpec ].
+		buttonEdit 	action:[ WidgetConfiguration new openWithSpec ].		
 									
 	] on: Error do: [  ] 
