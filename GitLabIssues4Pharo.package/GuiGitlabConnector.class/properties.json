@@ -6,13 +6,11 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"inputTokenGitLab",
 		"screen",
 		"switchBoolean",
-		"buttonBad",
+		"buttonSync",
 		"connector",
-		"listprojects",
-		"listissues",
+		"buttonConfig",
 		"widgetcombine"
 	],
 	"name" : "GuiGitlabConnector",
