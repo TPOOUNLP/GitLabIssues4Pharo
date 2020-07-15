@@ -15,11 +15,11 @@ initializeWidgets
 	
 	projectList displayBlock: [ :project | project name ].
 	issueList displayBlock: [ :issue | issue title ].
-	labelUserName label: 'Usuario: ' , GitlabConnector get user username.
+	labelUserName label: 'User: ' , GitlabConnector get user username.
 	buttonNew label: 'New'; icon: (self iconNamed: #glamorousAdd).
 	buttonDelete label: 'Delete'; icon: (self iconNamed: #glamorousTrash).
-	buttonEdit label: 'Update'; icon: (self iconNamed: #glamorousEdit).
-	buttonTodo label: 'Todo'; icon: (self iconNamed: #glamorousAccept).
+	buttonEdit label: 'Edit'; icon: (self iconNamed: #glamorousEdit).
+	buttonTodo label: 'ToDo'; icon: (self iconNamed: #checkboxSelected).
 	
 	self focusOrder
 		add: projectList;

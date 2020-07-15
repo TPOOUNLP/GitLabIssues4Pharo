@@ -6,11 +6,11 @@ initializeWidgets
 	buttonCancel := self newButton.
 	
 	buttonAccept
-		label: 'Aceptar';
+		label: 'Log commit';
 		icon: (self iconNamed: #glamorousAccept).
 		
 	buttonCancel
-		label: 'Cancelar';
+		label: 'Cancel';
 		icon: (self iconNamed: #glamorousCancel).
 	
 	self focusOrder

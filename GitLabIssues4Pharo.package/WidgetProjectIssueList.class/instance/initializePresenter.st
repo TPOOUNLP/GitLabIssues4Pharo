@@ -26,7 +26,18 @@ initializePresenter
 													  		labelIssueState label: 'State: ' , issue state.
 													  		labelIssueDescription label: 'Description: ' , issue description head ]
 										].
+		
+		"buttonNew
+			action: [  ]."
+		
+		"buttonEdit
+			action: [  ]."
+		
+		buttonTodo
+			action: [  WidgetTodoList new openWithSpec ].
 									
-		buttonDelete action: [ GitlabConnector get selectedIssue remove ].
+		buttonDelete
+			action: [ GitlabConnector get selectedIssue remove.
+									  issueList items: GitlabConnector get selectedProject issues ].
 									
 	] on: Error do: [  ] 

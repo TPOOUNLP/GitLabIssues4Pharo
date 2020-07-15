@@ -11,12 +11,12 @@ initializeWidgets
 		autoDeselection: true;
 		displayBlock: [ :todoItem | todoItem text ];
 		iconBlock: [ :todoItem | todoItem done
-											ifTrue: [ self iconNamed: #glamorousAccept ]
-											ifFalse: [ self iconNamed: #glamorousCancel ] ].
+											ifTrue: [ self iconNamed: #checkboxSelected ]
+											ifFalse: [ self iconNamed: #checkboxUnselected ] ].
 	
 	todoTitleInput ghostText: 'New ToDo...'.
 	buttonAdd label: 'Add'; icon: (self iconNamed: #glamorousAdd).
-	buttonAccept label: 'Save'; icon: (self iconNamed: #glamorousAccept).
+	buttonAccept label: 'Save'; icon: (self iconNamed: #glamorousSave).
 	buttonCancel label: 'Cancel'; icon: (self iconNamed: #glamorousCancel).
 	
 	self focusOrder
