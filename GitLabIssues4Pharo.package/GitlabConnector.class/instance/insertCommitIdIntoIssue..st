@@ -1,7 +1,6 @@
 as yet unclassified
 insertCommitIdIntoIssue: anAnnouncement
 	| wclis |
-	Transcript show: 'lalla'.
 	wclis := WidgetCommitLoggerIssueSelector new.
 	wclis openWithSpec.
 	wclis window whenClosedDo: [ 
