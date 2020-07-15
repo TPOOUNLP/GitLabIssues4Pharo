@@ -1,4 +1,4 @@
 api
 title
 
-	^'Issue selection'
+	^'Project/Issue selection'

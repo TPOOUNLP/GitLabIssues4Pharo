@@ -3,6 +3,16 @@ initializePresenter
 
 	[ GitlabConnector new.
 
+	droplistState
+		items: { 'any' . 'opened' . 'closed' } asOrderedCollection;
+		whenSelectedItemChanged: [ :item | item = 'any'
+			ifTrue: [ GitlabConnector get issueFilters unsetByState ]
+			ifFalse: [ GitlabConnector get issueFilters byState: item ] ].	
+		
+	checkboxAssignee
+		whenActivatedDo: [ GitlabConnector get issueFilters byAssignee: GitlabConnector get user id ];
+		whenDeactivatedDo: [ GitlabConnector get issueFilters unsetByAssignee ].
+
 	projectList
 		items: GitlabConnector get reqProjects;
 		whenListChanged: [ projectList resetSelection ];
@@ -37,7 +47,13 @@ initializePresenter
 			action: [  WidgetTodoList new openWithSpec ].
 									
 		buttonDelete
-			action: [ GitlabConnector get selectedIssue remove.
-									  issueList items: GitlabConnector get selectedProject issues ].
+			action: [ (UIManager default questionWithoutCancel: 'Are you sure you want to delete this issue?' title: 'Delete issue') ifTrue: [ 
+							GitlabConnector get selectedIssue remove.
+							issueList items: GitlabConnector get selectedProject issues.
+							UIManager default inform: 'Issue deleted' ] ].
+								
+		buttonReload
+			action: [ issueList items: GitlabConnector get selectedProject reqIssues.
+						 UIManager default inform: 'Reloaded' ]						
 									
 	] on: Error do: [  ] 

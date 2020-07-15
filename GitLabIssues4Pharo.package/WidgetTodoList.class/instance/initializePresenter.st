@@ -21,7 +21,8 @@ initializePresenter
 	buttonAccept
 		action: [ GitlabConnector get selectedIssue description todo: self todoWorkingCopy.
 					 GitlabConnector get selectedIssue save.
-					 self window close ].
+					 self window close.
+					 UIManager default inform: 'ToDo list updated'. ].
 	
 	buttonCancel
 		action: [ self window close ]

@@ -1,4 +1,4 @@
 accessing
 unset: aFilterString
 
-	self filters removeKey: aFilterString
+	self filters removeKey: aFilterString ifAbsent: [  ]

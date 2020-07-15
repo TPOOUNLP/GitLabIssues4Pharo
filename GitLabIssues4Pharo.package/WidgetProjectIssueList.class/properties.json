@@ -6,6 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
+		"droplistStateLabel",
+		"droplistState",
+		"checkboxAssignee",
 		"projectList",
 		"issueList",
 		"labelUserName",
@@ -16,7 +19,8 @@
 		"buttonNew",
 		"buttonDelete",
 		"buttonEdit",
-		"buttonTodo"
+		"buttonTodo",
+		"buttonReload"
 	],
 	"name" : "WidgetProjectIssueList",
 	"type" : "normal"

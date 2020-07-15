@@ -15,4 +15,5 @@ initializePresenter
 								  self initializePresenter ].
 							
 	buttonExport action: [ GitlabConnector get config export.
-								  self window close ]
+								  self window close.
+								  UIManager default inform: 'Configuration saved'. ]
