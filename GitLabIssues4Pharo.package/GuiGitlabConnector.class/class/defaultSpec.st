@@ -4,7 +4,15 @@ defaultSpec
 	
 	
 	^ SpecColumnLayout composed
-	add: #WidgetProjectIssueList;
+	
+	newRow: [ :row |
+				row add:#WidgetProjectIssueList]
+				origin: 0 @ 0 corner: 1 @ 0.7;
+				
+	newRow: [ :row |
+				row add: #buttonSync;add:#buttonConfig  ]
+				origin: 0 @ 0 corner: 1 @ 0.14;			
+								
 	yourself
 	
 	"add: #WidgetProjectIssueList;"

@@ -28,5 +28,6 @@ initializePresenter
 										].
 									
 		buttonDelete action: [ GitlabConnector get selectedIssue remove ].
+		" agrego otros actions de mis botones ? "
 									
 	] on: Error do: [  ] 
