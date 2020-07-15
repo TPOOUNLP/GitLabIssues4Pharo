@@ -2,7 +2,8 @@ tests
 testGet
 	| project |
 	
-	(ZincRequest stub httpGet: (Kind of: String)) willReturn: '{"id":1,"name":"aName"}'.
+	(ZincRequest stub httpGet: (Kind of: String)) willReturn: 
+		((ZnResponse statusCode: 200) entity: (ZnEntity json: '{"id":1,"name":"aName"}')).
 	
 	project := Project get.
 	

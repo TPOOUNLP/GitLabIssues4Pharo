@@ -8,4 +8,8 @@ import
 		line := stream nextLine splitOn: ' '.
 		self perform: (line first , ':') asSymbol with: (line second) asString ].
 	
-	stream close
+	stream close.
+	
+	"Sub/Unsub to events"
+
+

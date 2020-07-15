@@ -1,7 +1,11 @@
 instance creation
 get
-
-	^(NeoJSONReader on: (ZincRequest httpGet: (Endpoint user)) readStream)
+	| result |
+	
+	result := ZincRequest httpGet: (Endpoint user).
+	result isSuccess ifFalse: [ GitlabApiUnreachable signal ].
+	
+	^(NeoJSONReader on: result contents readStream)
 		mapInstVarsFor: User;
 		nextAs: User
 	

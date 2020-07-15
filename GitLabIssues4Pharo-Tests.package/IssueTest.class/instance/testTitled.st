@@ -3,8 +3,8 @@ testTitled
 	| issue |
 	
 	(ZincRequest stub httpPost: (Kind of: String) content: (Kind of: String))
-		willReturn: '{"id":1,"title":"aTitle"}'.
-	
+		willReturn: ((ZnResponse statusCode: 200) entity: (ZnEntity json: '{"id":1,"title":"aTitle"}')).
+		
 	GitlabConnector get selectedProject id: 3.
 	
 	issue := Issue titled: 'aTitle'.

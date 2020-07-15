@@ -6,5 +6,5 @@ httpPut: url content: json
         with: json
         type: ZnMimeType applicationJson);
 		put;
-		response;
-		contents
+		response
+		"contents"

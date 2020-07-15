@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Announcements-Core-Conditions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"announcementClass",
+		"conditionBlock"
+	],
+	"name" : "AnnouncementDeliveryCondition",
+	"type" : "normal"
+}

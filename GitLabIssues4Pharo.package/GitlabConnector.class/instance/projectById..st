@@ -1,7 +1,10 @@
 accessing
 projectById: anId
-	"Returns a new Project (from the api) that corresponds with the given id"
+	| result |
 
-	^(NeoJSONReader on: (ZincRequest httpGet: (Endpoint simpleProjectById: anId)) readStream)
+	result := ZincRequest httpGet: (Endpoint simpleProjectById: anId).
+	result isSuccess ifFalse: [ GitlabApiUnreachable signal ].	
+
+	^(NeoJSONReader on: result contents readStream)
 		mapInstVarsFor: Project;
 		nextAs: Project

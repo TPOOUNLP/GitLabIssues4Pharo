@@ -2,7 +2,8 @@ tests
 testGet
 	| user |
 	
-	(ZincRequest stub httpGet: (Kind of: String)) willReturn: '{"id":1,"username":"aName"}'.
+	(ZincRequest stub httpGet: (Kind of: String)) willReturn:
+		((ZnResponse statusCode: 200) entity: (ZnEntity json: '{"id":1,"username":"aName"}')).
 	
 	user := User get.
 	

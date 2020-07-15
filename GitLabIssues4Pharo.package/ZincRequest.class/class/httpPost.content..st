@@ -6,5 +6,5 @@ httpPost: url content: json
         with: json
         type: ZnMimeType applicationJson);
 		post;
-		response;
-		contents
+		response
+		"contents"

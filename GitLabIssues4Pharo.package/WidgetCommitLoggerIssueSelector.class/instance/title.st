@@ -1,4 +1,4 @@
 api
 title
 
-	^'Commit for Issue'
+	^'Log commit for issue'
