@@ -45,8 +45,8 @@ initializePresenter
 													  		labelIssueDescription label: 'Description: ' , issue description head ]
 										].
 		
-		"buttonNew
-			action: [  ]."
+		buttonNew
+			action: [ WidgetNewIssue new openWithSpec ].
 		
 		"buttonEdit
 			action: [  ]."
