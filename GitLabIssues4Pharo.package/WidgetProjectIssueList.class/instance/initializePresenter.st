@@ -17,9 +17,11 @@ initializePresenter
 		items: GitlabConnector get reqProjects;
 		whenListChanged: [ projectList resetSelection ];
 		whenSelectedItemChanged: [ :project | GitlabConnector get selectedProject: project.
-														 issueList items: GitlabConnector get selectedProject reqIssues.
-														 project isNil ifTrue: [ labelProjectTitle label: '' ] 
-																			ifFalse: [ labelProjectTitle label: 'Project: ' , project name ] ].
+														 "issueList items: GitlabConnector get selectedProject reqIssues."
+														 project isNil ifTrue: [ issueList items: {}.
+																						 labelProjectTitle label: '' ] 
+																			ifFalse: [ issueList items: GitlabConnector get selectedProject reqIssues.
+																						  labelProjectTitle label: 'Project: ' , project name ] ].
 	
 	issueList
 		items: GitlabConnector get selectedProject reqIssues;
@@ -28,10 +30,16 @@ initializePresenter
 		whenSelectedItemChanged: [ :issue | GitlabConnector get selectedIssue: issue.
 													  issue isNil
 														ifTrue: [
+															buttonEdit enabled: false.
+															buttonTodo enabled: false.
+															buttonDelete enabled: false.
 															labelIssueName label: ''.
 													  		labelIssueState label: ''.
 													  		labelIssueDescription label: '' ]
 													  	ifFalse: [ 
+															buttonEdit enabled: true.
+															buttonTodo enabled: true.
+															buttonDelete enabled: true.
 															labelIssueName label: 'Issue: ' , issue title.
 													  		labelIssueState label: 'State: ' , issue state.
 													  		labelIssueDescription label: 'Description: ' , issue description head ]
