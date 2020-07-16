@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "",
+	"super" : "ComposableModel",
+	"category" : "GitLabIssues4Pharo",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"todoWorkingCopy",
+		"todoList",
+		"todoTitleInput",
+		"buttonAdd",
+		"buttonAccept",
+		"buttonCancel"
+	],
+	"name" : "WidgetTodoList",
+	"type" : "normal"
+}

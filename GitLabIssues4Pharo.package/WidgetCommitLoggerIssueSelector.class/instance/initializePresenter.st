@@ -6,7 +6,8 @@ initializePresenter
 		
 	buttonAccept 
 		enabled: false;
-		action: [ self window close ].
+		action: [ self window close.
+					 UIManager default inform: 'Commit logged'. ].
 		
 	buttonCancel action: [ GitlabConnector get selectedIssue: nil.
 								  self window close ].

@@ -8,15 +8,15 @@ initializeWidgets
 	buttonExport := self newButton.
 	
 	labelInputToken label: 'Public access token:'.
-	inputToken ghostText: 'Ingrese su token'.
-	checkboxListenCommitEvent label: 'Registrar nuevos commits como comentario en un Issue.'.
+	inputToken ghostText: 'Your token...'.
+	checkboxListenCommitEvent label: 'Log new commits as comments on an issue'.
 	
 	buttonImport
-		label: 'Importar';
+		label: 'Import';
 		icon: (self iconNamed: #glamorousOpen).
 		
 	buttonExport
-		label: 'Guardar';
+		label: 'Save';
 		icon: (self iconNamed: #glamorousSave).
 	
 	self focusOrder
