@@ -1,8 +1,8 @@
 initialization
 initializePresenter
 
-	[ "GitlabConnector new."
-
+	[
+	
 	droplistState
 		items: { 'any' . 'opened' . 'closed' } asOrderedCollection;
 		whenSelectedItemChanged: [ :item | item = 'any'
@@ -17,7 +17,6 @@ initializePresenter
 		items: GitlabConnector get reqProjects;
 		whenListChanged: [ projectList resetSelection ];
 		whenSelectedItemChanged: [ :project | GitlabConnector get selectedProject: project.
-														 "issueList items: GitlabConnector get selectedProject reqIssues."
 														 project isNil ifTrue: [ issueList items: {}.
 																						 labelProjectTitle label: '' ] 
 																			ifFalse: [ issueList items: GitlabConnector get selectedProject reqIssues.

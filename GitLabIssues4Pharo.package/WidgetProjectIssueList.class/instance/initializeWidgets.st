@@ -1,6 +1,8 @@
 initialization
 initializeWidgets
 
+	[ GitlabConnector get ] on: Error do: [ GitlabConnector new ].
+
 	droplistStateLabel := self newLabel.
 	droplistState := self newDropList.
 	checkboxAssignee := self newCheckBox.
@@ -22,12 +24,14 @@ initializeWidgets
 	checkboxAssignee label: 'Only assigned to me.'.
 	projectList displayBlock: [ :project | project name ]; icons: [ self iconNamed: #emptyPackage ].
 	issueList displayBlock: [ :issue | issue title ]; icons: [ self iconNamed: #announcement ].
-	labelUserName label: 'User: ' , GitlabConnector get user username.
 	buttonNew label: 'New'; icon: (self iconNamed: #glamorousAdd).
 	buttonDelete label: 'Delete'; icon: (self iconNamed: #glamorousTrash).
 	buttonEdit label: 'Edit'; icon: (self iconNamed: #glamorousEdit).
 	buttonTodo label: 'ToDo'; icon: (self iconNamed: #checkboxSelected).
-	buttonReload label: 'Reload'; icon: (self iconNamed: #glamorousRefresh).	
+	buttonReload label: 'Reload'; icon: (self iconNamed: #glamorousRefresh).
+	(GitlabConnector get user isNil or: [ GitlabConnector get user username isNil ])
+		ifTrue: [ labelUserName label: 'User has no valid credentials' ]
+		ifFalse: [ labelUserName label: 'User: ' , GitlabConnector get user username ].
 	
 	self focusOrder
 		add: projectList;
