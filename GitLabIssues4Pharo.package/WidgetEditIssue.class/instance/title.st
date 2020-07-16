@@ -1,4 +1,4 @@
 api
 title 
 
-	^'New issue'
+	^'Edit issue'
