@@ -15,7 +15,7 @@ initializeWidgets
 											ifFalse: [ self iconNamed: #checkboxUnselected ] ].
 	
 	todoTitleInput ghostText: 'New ToDo...'.
-	buttonAdd label: 'Add'; icon: (self iconNamed: #glamorousAdd).
+	buttonAdd label: 'Add'; icon: (self iconNamed: #add).
 	buttonAccept label: 'Save'; icon: (self iconNamed: #glamorousSave).
 	buttonCancel label: 'Cancel'; icon: (self iconNamed: #glamorousCancel).
 	
