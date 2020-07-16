@@ -1,3 +1,3 @@
 as yet unclassified
 openWidgetNewIssue
-   WidgetIssue withProject: GitlabConnector get selectedProject  openWithSpec
+   WidgetNewIssue withProject: GitlabConnector get selectedProject  openWithSpec
