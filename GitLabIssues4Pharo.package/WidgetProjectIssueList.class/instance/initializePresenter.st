@@ -1,5 +1,6 @@
 initialization
 initializePresenter
+	| widgetissue |
 
 	[ GitlabConnector new.
 
@@ -29,7 +30,7 @@ initializePresenter
 									
 		buttonDelete action: [ GitlabConnector get selectedIssue remove ].
 		buttonTodo  action:[ WidgetConfiguration new openWithSpec ].
-		buttonNew  	action:[ WidgetIssue new openWithSpec  ].
+		buttonNew  	action:[ WidgetIssue new openWithSpec ].
 		buttonEdit 	action:[ WidgetIssue new openWithSpec  ].		
 									
 	] on: Error do: [  ] 
