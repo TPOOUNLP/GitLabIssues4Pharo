@@ -1,21 +1,28 @@
 initialization
 initializeWidgets 
+	
  labeltitle := self newLabel.
- title:= self newTextInput.
- labeldescription := self newLabel.
- description:= self newTextInput.
-
  labeltitle label:'Title'.
- labeldescription label:' Descrption'.		
+ titleinput:= self newTextInput.
+ titleinput ghostText: 'Ingrese titulo'.
+ 
+ labeldescription := self newLabel.
+ labeldescription label:' Descrption'.	
+ description:= self newTextInput.
+ buttonSave := self newButton.
+
+
+	
+		
+ buttonSave label: 'Save'; icon: (self iconNamed: #thumbsUp).		
 
  self focusOrder
-add: labeltitle ;
-add: title;
-add: labeldescription ;
-add: description
+add: labeltitle;
+add: titleinput;
+add: labeldescription;
+add: description;
+add: buttonSave
 
 
-
- 
  	
 	

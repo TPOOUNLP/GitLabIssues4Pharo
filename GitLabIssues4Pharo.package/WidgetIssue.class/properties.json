@@ -9,7 +9,7 @@
 		"id",
 		"iid",
 		"project_id",
-		"title",
+		"titleinput",
 		"state",
 		"description",
 		"labeldescription",
