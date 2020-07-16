@@ -1,7 +1,7 @@
 initialization
 initializePresenter
 
-	[ GitlabConnector new.
+	[ "GitlabConnector new."
 
 	droplistState
 		items: { 'any' . 'opened' . 'closed' } asOrderedCollection;

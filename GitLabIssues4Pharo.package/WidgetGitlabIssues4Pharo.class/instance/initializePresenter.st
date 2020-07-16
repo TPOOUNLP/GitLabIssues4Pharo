@@ -5,4 +5,5 @@ initializePresenter
 		action: [ WidgetConfiguration new openWithSpec ].
 		
 	buttonSync
-		action: [  ]
+		action: [ GitlabConnector new.
+					 UIManager default inform: 'Synchronized' ]

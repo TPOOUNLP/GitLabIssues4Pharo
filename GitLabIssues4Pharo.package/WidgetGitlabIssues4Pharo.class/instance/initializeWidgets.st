@@ -1,6 +1,8 @@
 initialization
 initializeWidgets
 
+	[ GitlabConnector get ] on: Error do: [ GitlabConnector new ].
+
 	projectIssueList := self instantiate: WidgetProjectIssueList.
 	buttonConfig := self newButton.
 	buttonSync := self newButton.
