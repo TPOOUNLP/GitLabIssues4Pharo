@@ -48,8 +48,8 @@ initializePresenter
 		buttonNew
 			action: [ WidgetNewIssue new openWithSpec ].
 		
-		"buttonEdit
-			action: [  ]."
+		buttonEdit
+			action: [ WidgetEditIssue new openWithSpec ].
 		
 		buttonTodo
 			action: [  WidgetTodoList new openWithSpec ].

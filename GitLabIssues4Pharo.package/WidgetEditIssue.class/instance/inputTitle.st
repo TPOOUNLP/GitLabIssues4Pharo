@@ -1,0 +1,3 @@
+accessing
+inputTitle
+	^ inputTitle

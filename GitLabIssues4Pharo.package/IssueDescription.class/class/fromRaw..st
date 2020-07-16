@@ -4,8 +4,8 @@ fromRaw: aString
 	
 	description := IssueDescription new.
 	
-	aString
-		ifNotNil: [ 
+	(aString isNotNil and: aString ~= '')
+		ifTrue: [ 
 			aString linesDo: [ :line | (line matchesRegex: TodoListItem flag)
 			ifTrue: [ description todo add: (TodoListItem fromRaw: line) ]
 			ifFalse: [
