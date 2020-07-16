@@ -45,7 +45,10 @@ initializePresenter
 										].
 		
 		buttonNew
-			action: [ WidgetNewIssue new openWithSpec ].
+			action: [ | wni |
+						 wni := WidgetNewIssue new.
+						 wni openWithSpec.
+						 wni window whenClosedDo: [ issueList items: GitlabConnector get selectedProject reqIssues ] ].
 		
 		buttonEdit
 			action: [ WidgetEditIssue new openWithSpec ].
