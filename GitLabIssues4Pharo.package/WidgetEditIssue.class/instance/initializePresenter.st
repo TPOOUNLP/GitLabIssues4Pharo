@@ -1,7 +1,7 @@
 initialization
 initializePresenter
 
-	self issueWorkingCopy: GitlabConnector get selectedIssue deepCopy.
+	self issueWorkingCopy: GitlabConnector get selectedIssue shallowCopy.
 
 	inputTitle
 		autoAccept: true;

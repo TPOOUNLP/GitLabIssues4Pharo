@@ -1,7 +1,7 @@
 initialization
 initializePresenter
 	
-	self todoWorkingCopy: GitlabConnector get selectedIssue description todo deepCopy.
+	self todoWorkingCopy: GitlabConnector get selectedIssue description todo shallowCopy.
 	
 	todoList
 		roots: self todoWorkingCopy;

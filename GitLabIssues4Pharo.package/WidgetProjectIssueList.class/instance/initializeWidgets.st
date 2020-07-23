@@ -24,7 +24,7 @@ initializeWidgets
 	checkboxAssignee label: 'Only assigned to me.'.
 	projectList displayBlock: [ :project | project name ]; icons: [ self iconNamed: #emptyPackage ].
 	issueList displayBlock: [ :issue | issue title ]; icons: [ self iconNamed: #announcement ].
-	buttonNew label: 'New'; icon: (self iconNamed: #glamorousAdd).
+	buttonNew label: 'New'; icon: (self iconNamed: #add).
 	buttonDelete label: 'Delete'; icon: (self iconNamed: #glamorousTrash).
 	buttonEdit label: 'Edit'; icon: (self iconNamed: #glamorousEdit).
 	buttonTodo label: 'ToDo'; icon: (self iconNamed: #checkboxSelected).

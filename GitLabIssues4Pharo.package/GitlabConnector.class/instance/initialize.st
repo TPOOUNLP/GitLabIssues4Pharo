@@ -1,9 +1,8 @@
 initialization
 initialize
 
-	self user: User get.
+	self user: ([ User get ] on: Error do: [ User basicNew ]).
 	self projects: OrderedCollection new.
-	self selectedProject: Project get.
 	self issueFilters: IssueFilterGenerator new.
 	self config isListeningForCommitEvent
 		ifTrue: [ self subscribeToCommitEvent ]

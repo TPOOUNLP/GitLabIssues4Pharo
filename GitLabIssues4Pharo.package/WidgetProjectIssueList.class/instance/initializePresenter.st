@@ -5,17 +5,18 @@ initializePresenter
 	
 	droplistState
 		items: { 'any' . 'opened' . 'closed' } asOrderedCollection;
+		whenBuiltDo: [ droplistState setSelectedItem: 'any' ];
 		whenSelectedItemChanged: [ :item | item = 'any'
 			ifTrue: [ GitlabConnector get issueFilters unsetByState ]
 			ifFalse: [ GitlabConnector get issueFilters byState: item ] ].	
 		
 	checkboxAssignee
+		whenBuiltDo: [ checkboxAssignee state: false ];
 		whenActivatedDo: [ GitlabConnector get issueFilters byAssignee: GitlabConnector get user id ];
 		whenDeactivatedDo: [ GitlabConnector get issueFilters unsetByAssignee ].
 
 	projectList
 		items: GitlabConnector get reqProjects;
-		whenListChanged: [ projectList resetSelection ];
 		whenSelectedItemChanged: [ :project | GitlabConnector get selectedProject: project.
 														 project isNil ifTrue: [ issueList items: {}.
 																						 labelProjectTitle label: '' ] 
@@ -23,7 +24,9 @@ initializePresenter
 																						  labelProjectTitle label: 'Project: ' , project name ] ].
 	
 	issueList
-		items: GitlabConnector get selectedProject reqIssues;
+		whenBuiltDo: [ GitlabConnector get selectedProject
+			ifNil: [ issueList items: {} ]
+			ifNotNil: [ issueList items: GitlabConnector get selectedProject reqIssues ] ];
 		whenListChanged: [ issueList resetSelection.
 								 GitlabConnector get selectedIssue: nil ];
 		whenSelectedItemChanged: [ :issue | GitlabConnector get selectedIssue: issue.
@@ -43,6 +46,8 @@ initializePresenter
 													  		labelIssueState label: 'State: ' , issue state.
 													  		labelIssueDescription label: 'Description: ' , issue description head ]
 										].
+		
+		] on: Error do: [  ].
 		
 		buttonNew
 			action: [ | wni |
@@ -66,7 +71,19 @@ initializePresenter
 							UIManager default inform: 'Issue deleted' ] ].
 								
 		buttonReload
-			action: [ issueList items: GitlabConnector get selectedProject reqIssues.
+			action: [ | currentProject  |
+						 currentProject := GitlabConnector get selectedProject.
+						 projectList items: GitlabConnector get reqProjects.
+						 currentProject
+							ifNil: [ self initializePresenter.
+										projectList resetSelection. ]
+							ifNotNil: [ 
+								GitlabConnector get selectedProject: currentProject.
+								projectList setSelectedItem: currentProject.
+								issueList items: currentProject reqIssues ].
+						 (GitlabConnector get user isNil or: [ GitlabConnector get user username isNil ])
+							ifTrue: [ labelUserName label: 'User has no valid credentials' ]
+							ifFalse: [ labelUserName label: 'User: ' , GitlabConnector get user username ].
 						 UIManager default inform: 'Reloaded' ]						
 									
-	] on: Error do: [  ] 
+	

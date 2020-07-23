@@ -3,7 +3,8 @@ reqProjects
 	| result |
 	
 	result := ZincRequest httpGet: (Endpoint simpleProjects).
-	result isSuccess ifFalse: [ GitlabApiUnreachable signal ].
+	(result isSuccess not or: [ result contents = '[]' ])
+		ifTrue: [ GitlabApiUnreachable signal ].
 	
 	^self projects: ((NeoJSONReader on: result contents readStream)
 		mapInstVarsFor: Project;
