@@ -6,15 +6,11 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"id",
-		"iid",
-		"project_id",
-		"title",
-		"description",
-		"state",
-		"notes",
-		"time_stats"
+		"human_time_estimate",
+		"human_total_time_spent",
+		"time_estimate",
+		"total_time_spent"
 	],
-	"name" : "Issue",
+	"name" : "IssueTimeStats",
 	"type" : "normal"
 }
