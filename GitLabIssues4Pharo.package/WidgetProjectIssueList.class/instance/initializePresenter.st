@@ -32,19 +32,23 @@ initializePresenter
 		whenSelectedItemChanged: [ :issue | GitlabConnector get selectedIssue: issue.
 													  issue isNil
 														ifTrue: [
+															buttonCloseIssue enabled: false.
+															buttonTimeStats enabled: false.
 															buttonEdit enabled: false.
 															buttonTodo enabled: false.
 															buttonDelete enabled: false.
 															labelIssueName label: ''.
 													  		labelIssueState label: ''.
-													  		labelIssueDescription label: '' ]
+													  		labelIssueDescription text: '' ]
 													  	ifFalse: [ 
+															buttonCloseIssue enabled: true.
+															buttonTimeStats enabled: true.
 															buttonEdit enabled: true.
 															buttonTodo enabled: true.
 															buttonDelete enabled: true.
 															labelIssueName label: 'Issue: ' , issue title.
 													  		labelIssueState label: 'State: ' , issue state.
-													  		labelIssueDescription label: 'Description: ' , issue description head ]
+													  		labelIssueDescription text: 'Description: ' , issue description head ]
 										].
 		
 		] on: Error do: [  ].

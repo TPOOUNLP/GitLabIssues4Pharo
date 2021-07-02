@@ -12,7 +12,9 @@ initializeWidgets
 	labelProjectTitle := self newLabel.
 	labelIssueName := self newLabel.
 	labelIssueState := self newLabel.
-	labelIssueDescription := self newLabel.
+	labelIssueDescription := self newText.
+	buttonCloseIssue := self newButton.
+	buttonTimeStats := self newButton.
 	buttonNew := self newButton.
 	buttonDelete := self newButton.
 	buttonEdit := self newButton.
@@ -24,6 +26,8 @@ initializeWidgets
 	checkboxAssignee label: 'Only assigned to me.'.
 	projectList displayBlock: [ :project | project name ]; icons: [ self iconNamed: #emptyPackage ].
 	issueList displayBlock: [ :issue | issue title ]; icons: [ self iconNamed: #announcement ].
+	buttonCloseIssue label: 'Close'; icon: (self iconNamed: #glamorousCancel ).
+	buttonTimeStats label: 'Time Stats'; icon: (self iconNamed: #glamorousAlarm  ).
 	buttonNew label: 'New'; icon: (self iconNamed: #add).
 	buttonDelete label: 'Delete'; icon: (self iconNamed: #glamorousTrash).
 	buttonEdit label: 'Edit'; icon: (self iconNamed: #glamorousEdit).
@@ -37,6 +41,8 @@ initializeWidgets
 		add: projectList;
 		add: issueList;
 		add: buttonNew;
+		add: buttonCloseIssue;
+		add: buttonTimeStats;
 		add: buttonDelete;
 		add: buttonEdit;
 		add: buttonTodo.
