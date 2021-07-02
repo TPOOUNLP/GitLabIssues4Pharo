@@ -1,13 +1,10 @@
 initialization
 initializePresenter
+|estimate spent|
+	estimate := 'Agregame el estimate recuperado de gitlab'.
+	spent := 'agregame el spent recuperado de gitlab'.
+	labelEstimated label: estimate. 
+	labelSpent label: spent.
 
-	inputTitle
-		whenTextChanged: [ buttonAccept enabled: inputTitle text ~= ''];
-		autoAccept: true;
-		text: ''.
-		
-	buttonAccept
-		action: [ inputTitle text = '' ifFalse: [ self window close.
-															  UIManager default inform: 'Issue closed'. ] ].
-							
-	buttonCancel action: [ self window close ]
+	"Completar con la accion del /Spend"
+	buttonAddSpend action: [  ].

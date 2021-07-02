@@ -1,17 +1,10 @@
 initialization
-initializeWidgets 
-	
-	labelTitle := self newLabel.
-	inputTitle := self newTextInput.
-	buttonAccept := self newButton. 
-	buttonCancel := self newButton.
-
-	labelTitle label: 'estimated time: '.
-		
-	buttonAccept
-		label: 'Confirm';
-		icon: (self iconNamed: #glamorousAccept).
-		
-	buttonCancel
-		label: 'Cancel';
-		icon: (self iconNamed: #glamorousCancel).	
+initializeWidgets
+	labelEstimated := self newLabel.
+	labelSpent := self newLabel.
+	inputSpend := self newNumberInput rangeMinimum: 0 maximum: 999999.	"solo positivos"
+	buttonAddSpend := self newButton.
+	inputSpend placeholder: 'New estimated ...'.
+	buttonAddSpend
+		label: 'Add Spend';
+		icon: (self iconNamed: #add).

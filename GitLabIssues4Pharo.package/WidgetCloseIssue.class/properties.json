@@ -1,15 +1,15 @@
 {
 	"commentStamp" : "",
-	"super" : "ComposableModel",
+	"super" : "SpPresenter",
 	"category" : "GitLabIssues4Pharo",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"labelTitle",
-		"inputTitle",
-		"buttonAccept",
-		"buttonCancel"
+		"labelEstimated",
+		"labelSpent",
+		"inputSpend",
+		"buttonAddSpend"
 	],
 	"name" : "WidgetCloseIssue",
 	"type" : "normal"

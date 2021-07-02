@@ -1,4 +1,4 @@
 api
 title 
 
-	^'Close issue'
+	^'Close Issue'
