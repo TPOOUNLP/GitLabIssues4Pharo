@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "ComposableModel",
-	"category" : "GitLabIssues4Pharo",
+	"category" : "GitLabIssues4Pharo-GitLabIssues4Pharo",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -20,7 +20,9 @@
 		"buttonDelete",
 		"buttonEdit",
 		"buttonTodo",
-		"buttonReload"
+		"buttonReload",
+		"buttonCloseIssue",
+		"buttonTimeStats"
 	],
 	"name" : "WidgetProjectIssueList",
 	"type" : "normal"

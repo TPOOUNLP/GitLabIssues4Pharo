@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "SpPresenter",
+	"category" : "GitLabIssues4Pharo",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"labelEstimated",
+		"labelSpent",
+		"inputEstimate",
+		"inputSpend",
+		"buttonEstimate",
+		"buttonAddSpend",
+		"buttonCancel"
+	],
+	"name" : "WidgetTimeStats",
+	"type" : "normal"
+}

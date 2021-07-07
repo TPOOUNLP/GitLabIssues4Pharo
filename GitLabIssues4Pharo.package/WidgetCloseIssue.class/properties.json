@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "SpPresenter",
+	"category" : "GitLabIssues4Pharo",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"labelEstimated",
+		"labelSpent",
+		"inputSpend",
+		"buttonAddSpend"
+	],
+	"name" : "WidgetCloseIssue",
+	"type" : "normal"
+}
