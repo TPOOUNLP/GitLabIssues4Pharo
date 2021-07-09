@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "ComposableModel",
+	"super" : "SpPresenter",
 	"category" : "GitLabIssues4Pharo",
 	"classinstvars" : [ ],
 	"pools" : [ ],
