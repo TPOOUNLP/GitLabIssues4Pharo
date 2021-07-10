@@ -51,10 +51,9 @@ initializePresenter
 		do: [  ].
 	buttonNew
 		action: [ | wni |
-			wni := WidgetNewIssue new.
-			wni openWithSpec.
-			wni window
-				whenClosedDo: [ issueList items: GitlabConnector get selectedProject reqIssues ] ].
+			wni := WidgetNewIssue new openModalWithSpec.
+			wni isOk
+				ifTrue: [ issueList items: GitlabConnector get selectedProject reqIssues ] ].
 	buttonCloseIssue
 		action: [ | wni |
 			wni := WidgetCloseIssue new openModalWithSpec ].
