@@ -1,11 +1,26 @@
 initialization
 initializePresenter
-|estimate spent|
-	estimate := 'Agregame el estimate recuperado de gitlab'.
-	spent := 'agregame el spent recuperado de gitlab'.
-	labelEstimated label: estimate. 
-	labelSpent label: spent.
-
-	"Completar con la accion del /Spend"
-	buttonAddSpend action: [  ].
+	self issueWorkingCopy: GitlabConnector get selectedIssue shallowCopy.
+	(self issueWorkingCopy time_stats time_estimate = 0)
+		ifTrue: [ labelEstimated label: 'Estimated time: 0h' ];
+		ifFalse: [ labelEstimated
+					label:
+						'Estimated time: '
+							, self issueWorkingCopy time_stats human_time_estimate ].
+	(self issueWorkingCopy time_stats total_time_spent = 0)
+		ifTrue: [ labelSpent label: 'Spended time: 0h' ];
+		ifFalse: [ labelSpent
+					label:
+						'Spended time: '
+							, self issueWorkingCopy time_stats human_time_estimate ].
+	buttonAddSpend
+		action: [ inputSpend text = ''
+				ifFalse: [ GitlabConnector get selectedIssue addSpend: inputSpend text.
+					self window close.
+					UIManager default inform: inputSpend text , ' hours added.' ] ].
+	buttonEstimate
+		action: [ inputEstimate text = ''
+				ifFalse: [ GitlabConnector get selectedIssue addEstimate: inputEstimate text.
+					self window close.
+					UIManager default inform: inputSpend text , ' hours estimated' ] ].
 	buttonCancel action: [ self window close ]

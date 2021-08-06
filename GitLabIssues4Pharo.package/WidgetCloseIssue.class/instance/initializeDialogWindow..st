@@ -7,8 +7,10 @@ initializeDialogWindow: aDialogPresenter
 		action: [ self window close ].
 	buttonCloseIssue := self newButton
 		label: 'Close Issue';
-		icon: (self iconNamed: #glamorousAccept).
-	"action: [ self window close ]."	"Cambiar por la accion/es para dar por cerrado el issue"
+		icon: (self iconNamed: #glamorousAccept);
+		action: [ GitlabConnector get selectedIssue closeIssue.
+			self window close.
+			UIManager default inform: 'Issue closed.' ].
 	aDialogPresenter centered.
 	aDialogPresenter
 		addButton: buttonCloseIssue;

@@ -2,13 +2,21 @@ initialization
 initializeWidgets
 	labelEstimated := self newLabel.
 	labelSpent := self newLabel.
-	inputEstimate := self newNumberInput rangeMinimum: 0 maximum: 999999.	"solo positivos"
-	inputSpend := self newNumberInput rangeMinimum: 0 maximum: 999999.
+	inputEstimate := self newTextInput.	"solo positivos"
+	inputSpend := self newTextInput.
 	buttonEstimate := self newButton.
 	buttonAddSpend := self newButton.
 	buttonCancel := self newButton.
-	inputEstimate placeholder: 'New estimated ...'.
-	inputSpend placeholder: 'New estimated ...'.
+	inputEstimate
+		autoAccept: true;
+		text: '0';
+		placeholder: 'New estimated ...';
+		whenTextChangedDo: [ buttonEstimate enabled: self inputEstimate text ~= '' ].
+	inputSpend
+		autoAccept: true;
+		text: '0';
+		placeholder: 'New spend ...';
+		whenTextChangedDo: [ buttonAddSpend enabled: self inputSpend text ~= '' ].
 	buttonEstimate
 		label: 'Estimate';
 		icon: (self iconNamed: #edit).

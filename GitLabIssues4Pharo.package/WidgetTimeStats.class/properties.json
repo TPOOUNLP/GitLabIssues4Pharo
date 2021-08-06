@@ -12,7 +12,8 @@
 		"inputSpend",
 		"buttonEstimate",
 		"buttonAddSpend",
-		"buttonCancel"
+		"buttonCancel",
+		"issueWorkingCopy"
 	],
 	"name" : "WidgetTimeStats",
 	"type" : "normal"
