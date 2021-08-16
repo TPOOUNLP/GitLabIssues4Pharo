@@ -2,7 +2,7 @@ initialization
 initializePresenter
 	
 	buttonConfig
-		action: [ WidgetConfiguration new openWithSpec ].
+		action: [ WidgetConfiguration new openModalWithSpec ].
 		
 	buttonSync
 		action: [ GitlabConnector new.

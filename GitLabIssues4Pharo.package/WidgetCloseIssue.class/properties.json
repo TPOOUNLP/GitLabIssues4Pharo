@@ -9,8 +9,7 @@
 		"labelEstimated",
 		"labelSpent",
 		"inputSpend",
-		"buttonAddSpend",
-		"issueWorkingCopy"
+		"buttonAddSpend"
 	],
 	"name" : "WidgetCloseIssue",
 	"type" : "normal"

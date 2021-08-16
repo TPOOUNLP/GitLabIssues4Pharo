@@ -1,4 +1,4 @@
-initialization
+api
 initializeWindow: aWindowPresenter
 	aWindowPresenter
 		title: self title;

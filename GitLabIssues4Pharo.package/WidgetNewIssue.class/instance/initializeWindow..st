@@ -1,4 +1,4 @@
-initialization
+accessing
 initializeWindow: aWindowPresenter
 	aWindowPresenter
 		title: self title;
